@@ -9,8 +9,8 @@ export async function fetchMultiplePlaylists(urls: string[]) {
       const res = await fetch(url);
       const text = await res.text();
       const result = parse(text);
-      
-      allItems.push(result);
+      const filtered = result.items.filter((item) => item.url?.endsWith(".m3u8"));
+      allItems.push(...filtered);
     } catch (err) {
       console.warn("Failed to fetch playlist:", url, err);
     }
