@@ -68,7 +68,7 @@ export default function HomePage() {
     <main className="max-w-screen-xl mx-auto px-4 py-6">
       <h1 className="text-3xl font-bold mb-6 text-center">🌍MRTV🌍</h1>
 
-      <Player src={currentUrl} />
+      <Player key={currentUrl} src={currentUrl} />
 
       {/* Toggle Categories */}
       {categoryList.length > 1 && (
